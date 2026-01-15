@@ -25,18 +25,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.mydreamteamapp.ui.theme.MyDreamTeamAppTheme
 
-class StudentFourActivity : ComponentActivity() {
+class StudentOneActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             MyDreamTeamAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    StudentInfo(
-                        name = "Justin Mikael Aguilar",
-                        bio = "Testing Page Number Four",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    StudentOneScreen(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -44,16 +40,20 @@ class StudentFourActivity : ComponentActivity() {
 }
 
 @Composable
-fun StudentInfo(name: String, bio: String, modifier: Modifier = Modifier) {
+fun StudentOneScreen(modifier: Modifier = Modifier) {
+    val name = "John Christopher A. Aguilan"
+    val bio = "Dream Believe Survive"
+
+
     Column(
         modifier = modifier
             .fillMaxSize()
-            .padding(16.dp),
+            .padding(24.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
             painter = painterResource(id = R.drawable.ic_launcher_foreground),
-            contentDescription = "Profile Photo",
+            contentDescription = "Student Photo",
             modifier = Modifier
                 .size(200.dp)
                 .padding(bottom = 16.dp)
@@ -61,27 +61,25 @@ fun StudentInfo(name: String, bio: String, modifier: Modifier = Modifier) {
             contentScale = ContentScale.Crop
         )
         Text(
-            text = "Name: $name",
-            fontSize = 24.sp,
+            text = name,
+            fontSize = 28.sp,
             fontWeight = FontWeight.Bold,
-            style = MaterialTheme.typography.headlineMedium
+            style = MaterialTheme.typography.headlineLarge,
+            modifier = Modifier.padding(bottom = 16.dp)
         )
         Text(
-            text = "Bio: $bio",
-            fontSize = 18.sp,
-            modifier = Modifier.padding(top = 8.dp),
-            style = MaterialTheme.typography.bodyLarge
+            text = bio,
+            fontSize = 16.sp,
+            style = MaterialTheme.typography.bodyLarge,
+            modifier = Modifier.padding(horizontal = 16.dp)
         )
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun StudentFourPreview() {
+fun StudentOnePreview() {
     MyDreamTeamAppTheme {
-        StudentInfo(
-            name = "Justin Mikael Aguilar",
-            bio = "Testing Page Number Four"
-        )
+        StudentOneScreen()
     }
 }

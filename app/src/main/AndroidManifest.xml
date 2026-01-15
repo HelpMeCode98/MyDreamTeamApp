@@ -23,7 +23,17 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".StudentOneActivity"
+            android:exported="false"
+            android:label="Student One"
+            android:theme="@style/Theme.MyDreamTeamApp" />
+        <activity
             android:name=".StudentFourActivity"
+            android:exported="false"
+            android:label="Student Four"
+            android:theme="@style/Theme.MyDreamTeamApp" />
+        <activity
+            android:name=".StudentFiveActivity"
             android:exported="false"
             android:label="Student Four"
             android:theme="@style/Theme.MyDreamTeamApp" />

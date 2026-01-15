@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -21,15 +20,29 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.mydreamteamapp.ui.theme.MyDreamTeamAppTheme
 
+class StudentFiveActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            MyDreamTeamAppTheme {
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    StudentFive(modifier = Modifier.padding(innerPadding))
+                }
+            }
+        }
+    }
+}
+
 @Composable
-fun StudentFive(name: String, description: String) {
+fun StudentFive(modifier: Modifier = Modifier) {
 
     val name = "Keith Lawrenz M. Abalos"
     val description = "I am a 3rd year student currently studying in Pamantasan ng Cabuyao and taking " +
             "a Bachelor of Science in Information Technology"
 
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .padding(24.dp),
         verticalArrangement = Arrangement.Center,
