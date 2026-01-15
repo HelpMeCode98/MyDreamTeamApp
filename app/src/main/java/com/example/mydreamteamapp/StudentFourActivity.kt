@@ -52,8 +52,8 @@ fun StudentInfo(name: String, bio: String, modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
-            painter = painterResource(id = R.drawable.nature),
-            contentDescription = "Nature Photo",
+            painter = painterResource(id = R.drawable.ic_launcher_foreground),
+            contentDescription = "Profile Photo",
             modifier = Modifier
                 .size(200.dp)
                 .padding(bottom = 16.dp)
