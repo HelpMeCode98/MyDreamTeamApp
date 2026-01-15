@@ -40,8 +40,8 @@ fun StudentFive(name: String, description: String) {
     ) {
         Image(
             painter = painterResource(id = imageId),
-            contentDescription = "Student Image", // Provide description for accessibility
-            modifier = Modifier.height(150.dp) // Adjust the size as needed
+            contentDescription = "Profile Image",
+            modifier = Modifier.height(150.dp)
         )
 
         Spacer(modifier = Modifier.height(16.dp))
